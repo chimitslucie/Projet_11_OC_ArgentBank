@@ -290,6 +290,56 @@ body {
   }
 }
 
+.inline {
+  flex-direction: column;
+  display: flex;
+}
+
+.edit-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  box-sizing: border-box;
+  background-color: white;
+  width: 248px;
+  margin: 23px auto;
+  padding: 2rem;
+  flex-direction: column;
+  color: black;
+}
+
+.input_edit {
+  padding: 5px;
+  font-size: 1.2rem;
+}
+
+.edit-button {
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.interaction-button {
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  margin: 0 15px 0 15px;
+}
+
+.button-container {
+  padding-top: 20px;
+}
+
+.input-edit {
+  margin-left: 13px;
+  margin-bottom: 15px;
+}
+
 .notfound-container {
   display: flex;
   flex-direction: column;
@@ -320,4 +370,9 @@ body {
 
 .back-link:hover {
   border-bottom: 1px black solid;
+}
+
+.Username-position {
+  display: flex;
+  flex-direction: row;
 }
