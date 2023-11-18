@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Headers from "./Components/Headers";
+import Accueil from "./Components/Accueil/Accueil";
+import Login from "./Components/Login/Login";
+import User from "./Components/User/User";
+import Error from "./Components/Error/Error";
+import Footer from "./Components/Footer";
+import { useSelector } from "react-redux";
 
+// Composant principal App
 function App() {
+  const isLoggedIn = useSelector((state) => state.signIn.islogin);
+  const userToken = useSelector((state) => state.signIn.token);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* Configuration des routes */}
+      <Headers />
+      <Routes>
+        {/* Route pour la page d'accueil */}
+        <Route path="/" element={<Accueil />} />
+        {/* Route pour la page Login */}
+        <Route path="/login" element={<Login />} />
+        {/* Route pour la page User */}
+        <Route
+          path="/profile"
+          element={
+            isLoggedIn && userToken !== "" ? (
+              <User />
+            ) : (
+              <Navigate to="/profile" />
+            )
+          }
+        />
+        {/* Route par défaut pour les erreurs */}
+        <Route path="*" element={<Error />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
