@@ -11,7 +11,7 @@ function Form() {
   // Définition des états pour stocker des données
   const [email, setEmail] = useState(""); // Email de l'utilisateur
   const [password, setPassword] = useState(""); // Mot de passe de l'utilisateur
-  const [error, setError] = useState(""); //Message d'erreur
+  const [error, setError] = useState(""); // Message d'erreur
   const [rememberMe, setRememberMe] = useState(false); // Option "Se souvenir de moi"
   const navigate = useNavigate(); // Pour la navigation dans l'application
   const dispatch = useDispatch(); // Pour dispatcher des actions Redux
@@ -66,7 +66,8 @@ function Form() {
       // Dispatch d'une action Redux pour l'authentification
       dispatch(signIn(token));
 
-      // Redirection vers la page profil
+      // Redirection vers la page de profil
+      navigate("/profile");
     } catch (error) {
       console.error("Une erreur s'est produite :", error);
       setError("Une erreur s'est produite lors de la connexion.");
