@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import logo from "../Assets/Images/argentBankLogo.png"; // Importation du logo
+import logo from "../Assets/Images/argentBankLogo.webp"; // Importation du logo
 import { Link, useNavigate } from "react-router-dom"; // Importation pour gérer les liens et la navigation
 import { useSelector, useDispatch } from "react-redux"; // Utilisé pour accéder aux données dans le store Redux et dispatcher des actions
 import { signOut, signIn } from "../Redux/store"; // Actions Redux pour la déconnexion et l'authentification
